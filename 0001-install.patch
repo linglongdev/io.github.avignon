@@ -1,0 +1,49 @@
+From 13ca4ec739d65c99978bf26a53189eaaf4dc9e3a Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 12 Sep 2024 13:49:17 +0800
+Subject: [PATCH] install
+
+---
+ avignon.desktop | 11 +++++++++++
+ avignon.pro     |  8 ++++++++
+ 2 files changed, 19 insertions(+)
+ create mode 100644 avignon.desktop
+
+diff --git a/avignon.desktop b/avignon.desktop
+new file mode 100644
+index 0000000..e1011b9
+--- /dev/null
++++ b/avignon.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=avignon
++Name=avignon
++Name[zh_CN]=avignon
++Icon=barn
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=avignon
++Version=1.0
+\ No newline at end of file
+diff --git a/avignon.pro b/avignon.pro
+index d5695ac..3c41846 100644
+--- a/avignon.pro
++++ b/avignon.pro
+@@ -7,3 +7,11 @@ QT += core gui svg
+ # Input
+ HEADERS += deck.h subtile.h table.h terrain.h tile.h mainwindow.h tileimage.h gamecreation.h tablelabel.h player.h follower.h followertype.h followerplacer.h imagelayer.h occupationmapper.h const.h piece.h dragonmover.h
+ SOURCES += deck.cpp main.cpp subtile.cpp table.cpp tile.cpp mainwindow.cpp tileimage.cpp gamecreation.cpp tablelabel.cpp player.cpp follower.cpp followerplacer.cpp occupationmapper.cpp piece.cpp dragonmover.cpp
++
++target.path = $$PREFIX/bin
++desktop.files = avignon.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/scalable/apps/
++icons.files = graphics/barn.svg
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+-- 
+2.43.4
+
